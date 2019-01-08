@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+var usersApi = require('./users_api/index.js');
+
+//创建用户
+router.post('/api/addUser', usersApi.addUser);
 
 module.exports = router;
